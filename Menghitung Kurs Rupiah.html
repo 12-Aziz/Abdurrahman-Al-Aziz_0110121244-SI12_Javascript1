@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Menghitung Kurs Rupiah</title>
+  </head>
+  <body>
+    <p>
+        Menghitung Kurs Rupiah
+    </p>
+    <div>USD</div>
+    <input id="Dollar" type="text" />
+    <hr color="black" size="2" width="100%">
+    <div>IDR</div>
+    <input id="Rupiah" type="text" />
+    <script>
+        const factor = 14650;
+
+const usd = document.getElementById("Dollar");
+const idr = document.getElementById("Rupiah");
+
+usd.addEventListener("input", function (kurs) {
+  const value = kurs.currentTarget.value;
+  const valueIDR = value * factor;
+  idr.value = valueIDR;
+});
+
+idr.addEventListener("input", function (kurs) {
+  const value = kurs.currentTarget.value;
+  const valueUSD = value / factor;
+  usd.value = valueUSD;
+});
+     </script>
+  </body>
+</html>
